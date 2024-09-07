@@ -1,0 +1,91 @@
+.search-bar-container {
+  padding: 25px 0;
+}
+
+.search-bar {
+  background-color: white;
+  border: 1px solid #0000001a;
+  height: 62px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.search-input {
+  border-radius: 20px;
+  border: none;
+  height: fit-content;
+  font-size: 16px;
+}
+.search-input > .ant-input::placeholder {
+  color: #000000 !important;
+  padding-inline-start: 5px;
+}
+
+.search-button-container {
+  display: flex;
+  place-content: end;
+}
+
+.search-button {
+  background-color: #f4cbdf;
+  color: #18191c;
+  border-radius: 10px;
+  height: 39px;
+  width: 99px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.selected-tags {
+  display: flex;
+  gap: 5px;
+}
+
+.filter-search-input {
+  margin-top: 10px;
+}
+
+.select {
+  width: 100%;
+}
+
+.select > .ant-select-selector {
+  border: none !important;
+  background: none !important;
+  margin-inline-end: 15px;
+}
+
+.select > .ant-select-arrow {
+  display: none;
+}
+
+.select > .ant-select-selector > .ant-select-selection-overflow {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.select
+  > .ant-select-selector
+  > .ant-select-selection-overflow::-webkit-scrollbar {
+  display: none;
+}
+
+.select > .ant-select-selector > .ant-select-selection-placeholder {
+  color: #000000;
+  padding-bottom: 5px;
+}
+@media (max-width: 768px) {
+  .search-bar {
+    height:100px
+  }
+  .search-button{
+    margin-top: 10px;
+    width: 100%;
+  }
+}

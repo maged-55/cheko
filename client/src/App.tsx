@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import MapPage from "./pages/MapPage";
+import Layout, { Content } from "antd/es/layout/layout";
+import NavBar from "./components/header/Header";
+import { ConfigProvider } from "antd";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#f4cbdf", 
+          fontSize: 18,
+          
+        },
+      }}
+    >
+      <Router>
+        <Layout>
+          <NavBar />
+          <Content style={{ padding: "20px", minHeight: "80vh" }}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/map" element={<MapPage />} />
+            </Routes>
+          </Content>
+        </Layout>
+      </Router>
+    </ConfigProvider>
   );
-}
+};
 
 export default App;
