@@ -1,0 +1,102 @@
+.modal-card-container {
+  border-radius: 58px !important;
+}
+
+.modal-card-content {
+   padding-inline: 15px;
+   padding-block: 10px;
+  /* padding: 20px; */
+}
+.ant-modal .ant-modal-content {
+  border-radius: 28px;
+}
+
+.modal-card-title {
+  margin: 0px;
+}
+
+.modal-card-calorie {
+  display: block;
+  font-size: 15.8px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.modal-card-description {
+  font-family: Inter;
+  font-size: 13.18px;
+  font-weight: 500;
+  line-height: 15.95px;
+  color: #000000;
+  opacity: 0.3;
+
+  margin-bottom: 20px;
+}
+
+.modal-card-image-container {
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.modal-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16.1px;
+}
+
+.modal-card-action-container {
+  margin-block-start: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-card-price {
+  white-space: nowrap;
+  font-size: 22.03px;
+  color: #f4cbdf;
+  font-weight: bold;
+  margin-inline-end: 18px;
+  /* margin-bottom: 15px; */
+}
+
+.modal-card-quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-card-quantity-button {
+  background-color: #f4cbdf;
+  border: none;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-card-quantity-text {
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .modal-card-container {
+    width: 100% !important;
+    margin: 0;
+    max-width: none;
+    top: 0;
+    border-radius: 0;
+  }
+
+  .modal-card-image-container {
+    height: 200px;
+  }
+}

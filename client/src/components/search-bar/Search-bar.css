@@ -82,9 +82,9 @@
 }
 @media (max-width: 768px) {
   .search-bar {
-    height:100px
+    height: 100px;
   }
-  .search-button{
+  .search-button {
     margin-top: 10px;
     width: 100%;
   }
