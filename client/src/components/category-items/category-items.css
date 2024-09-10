@@ -1,7 +1,7 @@
 .card-container {
   margin-block-start: 50px;
-  margin-inline-start: 10px;
-
+  margin-inline-start: 12px;
+  margin-right: 0px !important;
 }
 
 .card-item {
@@ -12,7 +12,14 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   background-color: #fff;
   height: 71px;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
+
+.dark-mode .card-item {
+  background-color: #2f2f2f;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .card-item > .ant-card-body {
   padding: 0px;
 }
@@ -29,51 +36,73 @@
   width: 53.42px;
   height: 50.99px;
   border-radius: 15px;
-
   margin-right: 10px;
 }
 
 .card-label {
   font-size: 16px;
   font-weight: 500;
+  color: #000000;
+}
+
+.dark-mode .card-label {
+  color: #ffffff;
 }
 
 .card-count {
   font-size: 16px;
   font-weight: 600;
+  color: #000000;
 }
 
+.dark-mode .card-count {
+  color: #ffffff;
+}
 
 @media (max-width: 768px) {
   .card-container {
-    margin-block-start: 75px;
+    margin-block-start: 100px;
     margin-inline: 30px !important;
-    
   }
-  .card-item {
-    height: 50px; 
-    padding: 5px 8px;
 
+  .card-item {
+    height: 50px;
+    padding: 5px 8px;
   }
 
   .icon-wrapper {
-    width: 35px; 
-    height: 33px; 
-    border-radius: 8px; 
-    margin-right: 5px
+    width: 35px;
+    height: 33px;
+    border-radius: 8px;
+    margin-right: 5px;
   }
 
   .card-label {
-    font-size: 12px; 
-    font-weight: 400; 
+    font-size: 12px;
+    font-weight: 400;
   }
 
   .card-count {
-    font-size: 12px; 
-    font-weight: 400; 
+    font-size: 12px;
+    font-weight: 400;
   }
 
   .card-content {
-    gap: 3px; 
+    gap: 3px;
   }
+}
+.dark-mode .card-container {
+  background-color: #141414;
+}
+
+.dark-mode .icon-wrapper img {
+  filter: brightness(0.8);
+}
+
+.dark-mode .card-count{
+  color: #000000 !important;
+}
+
+.dark-mode .card-label{
+  color: #000000 !important;
 }

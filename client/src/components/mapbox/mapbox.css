@@ -1,0 +1,9 @@
+.map_container > .mapboxgl-popup > .mapboxgl-popup-content {
+  border-radius: 10px !important;
+  width: 270px !important;
+  height: 156px !important;
+}
+.map_container > .mapboxgl-popup {
+  gap: 0px;
+  border-radius: 8.47px 0px 0px 0px;
+}

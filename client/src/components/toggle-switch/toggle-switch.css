@@ -1,0 +1,74 @@
+.dark-mode-toggle {
+  position: absolute;
+  top: 1vh;
+  right: 0vw;
+}
+
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ant-switch-handle {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.ant-switch-inner {
+  background-color: #000;
+}
+
+.dark-mode .ant-switch-inner {
+  background-color: #3f4142;
+}
+
+.icon {
+  font-size: 44px;
+  color: #000;
+}
+
+.dark-mode .icon {
+  color: #3f4142;
+}
+
+.vertical-switch {
+  transform: rotate(-90deg);
+}
+
+.vertical-switch.ant-switch.ant-switch-checked .ant-switch-handle {
+  /* left: calc(100% - 28px) !important; */
+}
+
+.vertical-switch.ant-switch {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.vertical-switch.ant-switch.ant-switch-checked {
+  background-color: #000;
+}
+
+.vertical-switch.ant-switch .ant-switch-handle::before {
+  background-color: #ffc0cb;
+}
+
+/* Adjust these values as needed to fine-tune the positioning */
+.sun-icon {
+  margin-bottom: 5px;
+}
+
+.moon-icon {
+  margin-top: 5px;
+}
+
+@media (max-width:790px) {
+
+  .dark-mode-toggle {
+    position: absolute;
+    top: 1vh;
+    right: -1vw;
+  }
+  
+}

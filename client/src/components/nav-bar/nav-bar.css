@@ -7,9 +7,10 @@
   color: #fff;
   height: 110px;
   left: -30px;
-  top: -24px; 
+  top: -24px;
   width: 95%;
   border-bottom-right-radius: 36px;
+  z-index: 1;
 }
 
 .header-menu {
@@ -64,4 +65,10 @@
 .menuItem {
   font-size: 18px !important;
   padding-block-start: 15px;
+}
+
+@media (max-width: 778px) {
+  .header-container {
+    width: 90%;
+  }
 }

@@ -2,17 +2,26 @@
   border-radius: 58px !important;
 }
 
-.modal-card-content {
-   padding-inline: 15px;
-   padding-block: 10px;
-  /* padding: 20px; */
+.modal-card-container.dark-mode .ant-modal-content {
+  background-color: #2f2f2f;
+  color: #ffffff;
 }
+
+.modal-card-content {
+  padding-inline: 15px;
+  padding-block: 10px;
+}
+
 .ant-modal .ant-modal-content {
   border-radius: 28px;
 }
 
 .modal-card-title {
   margin: 0px;
+}
+
+.dark-mode .modal-card-title {
+  color: #ffffff;
 }
 
 .modal-card-calorie {
@@ -22,6 +31,10 @@
   margin-bottom: 10px;
 }
 
+.dark-mode .modal-card-calorie {
+  color: #aaaaaa !important;
+}
+
 .modal-card-description {
   font-family: Inter;
   font-size: 13.18px;
@@ -29,8 +42,12 @@
   line-height: 15.95px;
   color: #000000;
   opacity: 0.3;
-
   margin-bottom: 20px;
+}
+
+.dark-mode .modal-card-description {
+  color: #ffffff;
+  opacity: 0.5;
 }
 
 .modal-card-image-container {
@@ -60,7 +77,6 @@
   color: #f4cbdf;
   font-weight: bold;
   margin-inline-end: 18px;
-  /* margin-bottom: 15px; */
 }
 
 .modal-card-quantity-controls {
@@ -81,10 +97,26 @@
   justify-content: center;
 }
 
+.dark-mode .modal-card-quantity-button {
+  background-color: #2f2f2f;
+  border: 1px solid #f4cbdf;
+  color: #f4cbdf;
+}
+
 .modal-card-quantity-text {
   margin: 0 20px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.dark-mode .modal-card-quantity-text {
+  color: #ffffff;
+}
+.dark-mode .modal-card-price {
+  color: #979797;
+}
+.dark-mode .modal-card-title {
+  color: #d2d2d2;
 }
 
 @media (max-width: 768px) {
@@ -95,7 +127,9 @@
     top: 0;
     border-radius: 0;
   }
-
+  .modal-card-image {
+    object-fit: fill;
+  }
   .modal-card-image-container {
     height: 200px;
   }

@@ -1,6 +1,6 @@
 import React from "react";
-import { Row, Col } from "antd";
-import './cards.css'
+import { Row, Col, Divider } from "antd";
+import "./cards.css";
 import ProductCard from "./product-card/product-card";
 
 interface CardsProps {
@@ -14,10 +14,19 @@ interface CardsProps {
   }>;
 }
 
+console.log("cards");
+
 const Cards: React.FC<CardsProps> = ({ items }) => {
   return (
     <>
-      <Row    className="cards-container" gutter={[16, 16]}>
+      <Row className="cards-container" gutter={[16, 16]}>
+        <Divider
+          style={{ fontSize: "28px",marginBlockStart:'0px' }}
+          orientation="left"
+          orientationMargin="12"
+        >
+          Breakfast
+        </Divider>
         {items.map((item) => (
           <Col
             key={item.id}

@@ -12,7 +12,7 @@ export const FILTER_OPTIONS = [
   {
     label: "Soups",
     icon: "/icons/soups.svg",
-    bgColor: "#d9cce7",
+    bgColor: "#E7DEE3",
   },
   {
     label: "Sushi",

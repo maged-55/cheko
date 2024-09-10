@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { Skeleton, message } from "antd";
+import { Skeleton } from "antd";
 import { useQuery } from "react-query";
 import CategoryItems from "../components/category-items/category-items";
 import Cards from "../components/cards/cards";
@@ -12,20 +12,21 @@ function HomePage() {
   const categories =
     searchParams.get("category")?.split(",").filter(Boolean) || [];
 
-  const { data, isLoading} = useQuery(
+  const { data, isLoading, isFetching } = useQuery(
     ["menuItems", searchTerm, categories],
     () => fetchMenuItems(searchTerm, categories),
     {
-      keepPreviousData: true,
-      staleTime: 5 * 60 * 1000,
+      refetchOnWindowFocus: true, 
     }
   );
 
   if (isLoading) {
     return <Skeleton active />;
   }
+
   return (
     <>
+      {isFetching && <div>Refreshing...</div>}
       <CategoryItems categoryCounts={data?.categoryCounts || {}} />
       <Cards items={data?.items || []} />
     </>

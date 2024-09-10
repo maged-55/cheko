@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CustomFilterIcon = () => (
   <svg
     width="27"

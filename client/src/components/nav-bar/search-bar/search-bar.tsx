@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Input, Button, Row, Col, Select } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import "./Search-bar.css";
-import CustomFilterIcon from "../icons/filter-icon";
-import { FILTER_LABELS } from "../../constants/filterConstants";
+import "./search-bar.css";
+import CustomFilterIcon from "../../icons/filter-icon";
+import { FILTER_LABELS } from "../../../constants/filterConstants";
 import { useSearchParams } from "react-router-dom";
+import { useTheme } from "../../hooks/theme-context";
 
 const { Option } = Select;
 
 const SearchBar = () => {
+  const { isDarkMode } = useTheme();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(
     searchParams.get("search") || ""
@@ -47,7 +49,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-bar-container">
+    <div className={`search-bar-container ${isDarkMode ? "dark-mode" : ""}`}>
       <Row align="middle" className="search-bar" gutter={16}>
         <Col xs={10} sm={12} md={11}>
           <Input
@@ -66,7 +68,7 @@ const SearchBar = () => {
           <Select
             mode="multiple"
             className="select"
-            placeholder="Categories"
+            placeholder="Filter"
             value={selectedCategories}
             onChange={handleCategorySelect}
             open={dropdownOpen}

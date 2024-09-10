@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, memo } from "react";
 import { Card, Button, Row, Col } from "antd";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import "./product-card.css";
 import ModalCard from "../modal-card/modal-card";
-
+import { useTheme } from "../../hooks/theme-context";
 
 interface ProductCardProps {
   item: {
+    id:string
     name: string;
     calorie: number;
     price: number;
@@ -15,31 +16,36 @@ interface ProductCardProps {
   };
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
+const ProductCard: React.FC<ProductCardProps> = memo(({ item }) => {
+  const { isDarkMode } = useTheme();
   const [quantity, setQuantity] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const increaseQuantity = (e?: React.MouseEvent) => {
+  const increaseQuantity = useCallback((e?: React.MouseEvent) => {
     e?.stopPropagation();
-    setQuantity(quantity + 1);
-  };
+    setQuantity((prev) => prev + 1);
+  }, []);
 
-  const decreaseQuantity = (e?: React.MouseEvent) => {
+  const decreaseQuantity = useCallback((e?: React.MouseEvent) => {
     e?.stopPropagation();
-    setQuantity(Math.max(0, quantity - 1));
-  };
+    setQuantity((prev) => Math.max(0, prev - 1));
+  }, []);
 
-  const handleCardClick = () => {
+  const handleCardClick = useCallback(() => {
     setIsModalVisible(true);
-  };
+  }, []);
 
-  const handleModalClose = () => {
+  const handleModalClose = useCallback(() => {
     setIsModalVisible(false);
-  };
+  }, []);
 
   return (
     <>
-      <Card className="product-card" onClick={handleCardClick}>
+      <Card
+        key={item.id}
+        className={`product-card ${isDarkMode ? "dark-mode" : ""}`}
+        onClick={handleCardClick}
+      >
         <Row gutter={[16, 16]} align="middle" className="product-content">
           <Col xs={24} sm={12} md={12} lg={10} xl={10}>
             <img className="product-image" src={item.image} alt={item.name} />
@@ -52,7 +58,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
               </div>
               <div className="product-price-section">
                 <span className="product-price">{item.price} SR</span>
-                <div className="quantity-controls" onClick={(e) => e.stopPropagation()}>
+                <div
+                  className="quantity-controls"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <Button
                     className="quantity-button"
                     icon={<MinusOutlined />}
@@ -70,7 +79,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
           </Col>
         </Row>
       </Card>
-
       <ModalCard
         isVisible={isModalVisible}
         onClose={handleModalClose}
@@ -81,6 +89,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
       />
     </>
   );
-};
+});
 
 export default ProductCard;

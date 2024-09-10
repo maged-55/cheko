@@ -10,15 +10,30 @@
   padding: 10px;
 }
 
+.dark-mode .search-bar {
+  background-color: #2f2f2f;
+  border-color: #3f3f3f;
+}
+
 .search-input {
   border-radius: 20px;
   border: none;
   height: fit-content;
   font-size: 16px;
 }
+
+.dark-mode .search-input {
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
 .search-input > .ant-input::placeholder {
   color: #000000 !important;
   padding-inline-start: 5px;
+}
+
+.dark-mode .search-input > .ant-input::placeholder {
+  color: #ffffff !important;
 }
 
 .search-button-container {
@@ -32,6 +47,11 @@
   border-radius: 10px;
   height: 39px;
   width: 99px;
+}
+
+.dark-mode .search-button {
+  background-color: #f4cbdf;
+  color: #18191c;
 }
 
 .filter-container {
@@ -60,6 +80,10 @@
   margin-inline-end: 15px;
 }
 
+.dark-mode .select > .ant-select-selector {
+  color: #ffffff;
+}
+
 .select > .ant-select-arrow {
   display: none;
 }
@@ -70,9 +94,7 @@
   white-space: nowrap;
 }
 
-.select
-  > .ant-select-selector
-  > .ant-select-selection-overflow::-webkit-scrollbar {
+.select > .ant-select-selector > .ant-select-selection-overflow::-webkit-scrollbar {
   display: none;
 }
 
@@ -80,6 +102,11 @@
   color: #000000;
   padding-bottom: 5px;
 }
+
+.dark-mode .select > .ant-select-selector > .ant-select-selection-placeholder {
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .search-bar {
     height: 100px;
@@ -88,4 +115,22 @@
     margin-top: 10px;
     width: 100%;
   }
+}
+
+/* Additional dark mode styles */
+.dark-mode .ant-select-dropdown {
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
+.dark-mode .ant-select-item {
+  color: #ffffff;
+}
+
+.dark-mode .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #3f3f3f;
+}
+
+.dark-mode .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: #4f4f4f;
 }

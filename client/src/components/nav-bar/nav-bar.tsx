@@ -5,7 +5,8 @@ import { Header as Head } from "antd/es/layout/layout";
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 import "./nav-bar.css";
-import SearchBar from "../search-bar/Search-bar";
+import SearchBar from "./search-bar/search-bar";
+import DarkModeToggle from "../toggle-switch/toggle-switch";
 
 const NavBar: React.FC = () => {
   const location = useLocation();
@@ -26,7 +27,9 @@ const NavBar: React.FC = () => {
             <Link to="/map">Map</Link>
           </Menu.Item>
         </Menu>
+        
         <SearchBar />
+        <DarkModeToggle/>
       </div>
     </div>
   );
