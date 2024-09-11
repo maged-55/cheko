@@ -5,7 +5,7 @@ import ModalCard from "../cards/modal-card/modal-card";
 import "./mapbox.css";
 import { useTheme } from "../hooks/theme-context";
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || "";
+mapboxgl.accessToken = "pk.eyJ1IjoibWFqZWQtNTUiLCJhIjoiY20wZ3o4a24wMDUyZTJqczlldTJweDh4MyJ9.nH_f3aFJKnZ_LWSuQXIgQQ";
 mapboxgl.setRTLTextPlugin(
   "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.3.0/mapbox-gl-rtl-text.js"
 );
